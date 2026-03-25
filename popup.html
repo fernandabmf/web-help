@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="popup.css" />
+    <title>Controle de Cores</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="colors">
+        <a href="#">Alterar cores</a>
+        <button id="bwBtn">Preto e Branco</button>
+        <button id="tempBtn">Ajustar Temperatura</button>
+
+        <div
+          class="slider-container"
+          id="sliderContainer"
+          style="display: none"
+        >
+          <label for="tempRange">Temperatura de cor:</label><br />
+          <input type="range" id="tempRange" min="-100" max="100" value="0" />
+        </div>
+      </div>
+
+      <div class="night">
+        <a href="#">Tema noturno</a>
+        <button id="nightBtn">Ativar Tema Noturno</button>
+      </div>
+
+      <div class="texts">
+        <a href="#">Alterar textos</a>
+        <button id="textAdjustBtn">A± Ajustar Texto</button>
+
+        <div
+          class="slider-container"
+          id="textSliderContainer"
+          style="display: none"
+        >
+          <label for="textRange">Tamanho do texto:</label><br />
+          <input type="range" id="textRange" min="-40" max="40" value="0" />
+        </div>
+
+        <button id="textResetBtn">↺ Resetar Texto</button>
+      </div>
+
+      <a href="#">Leitura de textos</a>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

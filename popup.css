@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  width: 260px;
+  background: #aaa5ff;
+}
+
+/* Barra lateral — agora funciona como o corpo do pop-up */
+.sidebar {
+  width: 260px;
+  background: #aaa5ff;
+  padding: 24px;
+}
+
+.sidebar a {
+  display: block;
+  color: #110e52;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 0;
+  font-size: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.sidebar a:hover {
+  color: #aaa;
+}
+
+button {
+  padding: 10px 18px;
+  margin: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #005fa3;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #004a82;
+}
+
+.slider-container {
+  padding: 8px 8px 0;
+  color: #110e52;
+  font-size: 0.9rem;
+}
+
+.slider-container input[type="range"] {
+  width: 100%;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.night {
+  border-bottom: 1px solid #333;
+}
+
+.texts {
+  border-bottom: 1px solid #333;
+}
