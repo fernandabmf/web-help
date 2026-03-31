@@ -10,14 +10,19 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="popup.css" />
-    <title>Controle de Cores</title>
+    <title>Web Help</title>
   </head>
   <body>
     <div class="sidebar">
+      <div class="title-icon">
+        <img src="icon-web-help.svg" alt="icone do Web Help" class="logo" />
+        <h1>Web Help</h1>
+      </div>
+
       <div class="colors">
         <a href="#">Alterar cores</a>
-        <button id="bwBtn">Preto e Branco</button>
-        <button id="tempBtn">Ajustar Temperatura</button>
+        <button class="actionBtn" id="bwBtn">Preto e Branco</button>
+        <button class="actionBtn" id="tempBtn">Ajustar Temperatura</button>
 
         <div
           class="slider-container"
@@ -31,12 +36,12 @@
 
       <div class="night">
         <a href="#">Tema noturno</a>
-        <button id="nightBtn">Ativar Tema Noturno</button>
+        <button class="actionBtn" id="nightBtn">Ativar Tema Noturno</button>
       </div>
 
       <div class="texts">
         <a href="#">Alterar textos</a>
-        <button id="textAdjustBtn">A± Ajustar Texto</button>
+        <button class="actionBtn" id="textAdjustBtn">A± Ajustar Texto</button>
 
         <div
           class="slider-container"
@@ -47,7 +52,7 @@
           <input type="range" id="textRange" min="-40" max="40" value="0" />
         </div>
 
-        <button id="textResetBtn">↺ Resetar Texto</button>
+        <button class="actionBtn" id="textResetBtn">↺ Resetar Texto</button>
       </div>
 
       <a href="#">Leitura de textos</a>

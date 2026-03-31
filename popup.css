@@ -7,13 +7,23 @@
 
 body {
   width: 260px;
-  background: #aaa5ff;
+  background: #f5f5ff;
 }
 
-/* Barra lateral — agora funciona como o corpo do pop-up */
+img {
+  width: 40px;
+  height: 40px;
+}
+
+.title-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .sidebar {
   width: 260px;
-  background: #aaa5ff;
+  background: #f5f5ff;
   padding: 24px;
 }
 
@@ -35,8 +45,9 @@ button {
   padding: 10px 18px;
   margin: 8px;
   border: none;
-  border-radius: 8px;
+  border-radius: 16px;
   background-color: #005fa3;
+  font-weight: 500;
   color: #fff;
   font-size: 15px;
   cursor: pointer;
@@ -45,6 +56,14 @@ button {
 
 button:hover {
   background-color: #004a82;
+}
+
+button.active {
+  background-color: #00b37e;
+}
+
+button.active:hover {
+  background-color: #009e6d;
 }
 
 .slider-container {
