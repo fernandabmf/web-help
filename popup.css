@@ -19,6 +19,7 @@ img {
   display: flex;
   align-items: center;
   gap: 8px;
+  border-bottom: 1px solid #333;
 }
 
 .sidebar {
@@ -34,11 +35,14 @@ img {
   font-weight: bold;
   padding: 12px 0;
   font-size: 1rem;
-  border-bottom: 1px solid #333;
 }
 
 .sidebar a:hover {
   color: #aaa;
+}
+
+.colors {
+  border-bottom: 1px solid #333;
 }
 
 button {
@@ -78,10 +82,24 @@ button.active:hover {
   cursor: pointer;
 }
 
-.night {
+.night,
+.texts,
+.speech {
   border-bottom: 1px solid #333;
 }
 
-.texts {
-  border-bottom: 1px solid #333;
+.speech-hint {
+  font-size: 0.8rem;
+  color: #555;
+  padding: 6px 0 2px;
+  font-weight: normal;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  background-color: #aaa;
 }

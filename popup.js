@@ -37,7 +37,7 @@ tempBtn.addEventListener("click", () => {
   sendMessage({ action: isVisible ? "resetFilter" : "showTemp" });
 });
 
-// Ajustar temperatura de cor
+// Ajustar temperatura de cor em tempo real
 tempRange.addEventListener("input", () => {
   const value = parseInt(tempRange.value);
   sendMessage({ action: "setTemperature", value });
@@ -77,4 +77,26 @@ textResetBtn.addEventListener("click", () => {
   textSliderContainer.style.display = "none";
   textAdjustBtn.classList.remove("active");
   sendMessage({ action: "resetTextSize" });
+});
+
+// Leitura de textos
+const speechReadBtn = document.getElementById("speechReadBtn");
+const speechStopBtn = document.getElementById("speechStopBtn");
+const speechHint = document.getElementById("speechHint");
+const speechRate = document.getElementById("speechRate");
+
+speechReadBtn.addEventListener("click", () => {
+  const rate = parseFloat(speechRate.value);
+  sendMessage({ action: "speechRead", rate, volume: 1 });
+
+  speechReadBtn.classList.add("active");
+  speechStopBtn.disabled = false;
+  speechHint.textContent = "Lendo...";
+});
+
+speechStopBtn.addEventListener("click", () => {
+  sendMessage({ action: "speechStop" });
+  speechReadBtn.classList.remove("active");
+  speechStopBtn.disabled = true;
+  speechHint.textContent = "Selecione um trecho na página e clique em Ler.";
 });

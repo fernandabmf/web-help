@@ -121,6 +121,29 @@ if (!window.__extensaoCarregada) {
       case "resetTextSize":
         resetAllText();
         break;
+
+      case "speechRead":
+        // Cancela qualquer leitura em andamento antes de iniciar
+        window.speechSynthesis.cancel();
+
+        const selectedText = window.getSelection()?.toString().trim();
+
+        if (!selectedText) {
+          // Nenhum texto selecionado — avisa o popup via sendResponse (não bloqueia)
+          break;
+        }
+
+        const utterance = new SpeechSynthesisUtterance(selectedText);
+        utterance.lang = document.documentElement.lang || "pt-BR";
+        utterance.rate = message.rate;
+        utterance.volume = message.volume;
+
+        window.speechSynthesis.speak(utterance);
+        break;
+
+      case "speechStop":
+        window.speechSynthesis.cancel();
+        break;
     }
   });
 }

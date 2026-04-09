@@ -21,8 +21,8 @@
 
       <div class="colors">
         <a href="#">Alterar cores</a>
-        <button class="actionBtn" id="bwBtn">Preto e Branco</button>
-        <button class="actionBtn" id="tempBtn">Ajustar Temperatura</button>
+        <button class="actionBtn" id="bwBtn">❍ Preto e Branco</button>
+        <button class="actionBtn" id="tempBtn">☀ Ajustar Temperatura</button>
 
         <div
           class="slider-container"
@@ -30,13 +30,14 @@
           style="display: none"
         >
           <label for="tempRange">Temperatura de cor:</label><br />
+
           <input type="range" id="tempRange" min="-100" max="100" value="0" />
         </div>
       </div>
 
       <div class="night">
         <a href="#">Tema noturno</a>
-        <button class="actionBtn" id="nightBtn">Ativar Tema Noturno</button>
+        <button class="actionBtn" id="nightBtn">☾ Ativar Tema Noturno</button>
       </div>
 
       <div class="texts">
@@ -55,7 +56,27 @@
         <button class="actionBtn" id="textResetBtn">↺ Resetar Texto</button>
       </div>
 
-      <a href="#">Leitura de textos</a>
+      <div class="speech">
+        <a href="#">Leitura de textos</a>
+
+        <div class="slider-container">
+          <label for="speechRate">Velocidade:</label>
+          <input
+            type="range"
+            id="speechRate"
+            min="0.5"
+            max="2"
+            step="0.1"
+            value="1"
+          />
+        </div>
+
+        <p class="speech-hint" id="speechHint">
+          Selecione um trecho na página e clique em Ler Texto.
+        </p>
+        <button class="actionBtn" id="speechReadBtn">▶ Ler texto</button>
+        <button class="actionBtn" id="speechStopBtn" disabled>■ Parar</button>
+      </div>
     </div>
 
     <script src="popup.js"></script>
