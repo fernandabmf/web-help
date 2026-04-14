@@ -123,27 +123,41 @@ if (!window.__extensaoCarregada) {
         break;
 
       case "speechRead":
-        // Cancela qualquer leitura em andamento antes de iniciar
-        window.speechSynthesis.cancel();
-
-        const selectedText = window.getSelection()?.toString().trim();
-
-        if (!selectedText) {
-          // Nenhum texto selecionado — avisa o popup via sendResponse (não bloqueia)
-          break;
-        }
-
-        const utterance = new SpeechSynthesisUtterance(selectedText);
-        utterance.lang = document.documentElement.lang || "pt-BR";
-        utterance.rate = message.rate;
-        utterance.volume = message.volume;
-
-        window.speechSynthesis.speak(utterance);
+        executeSpeechRead(message.rate, message.volume);
         break;
 
       case "speechStop":
         window.speechSynthesis.cancel();
         break;
+    }
+  });
+
+  // Função de leitura reutilizável — usada tanto pelo popup quanto pelo atalho
+  function executeSpeechRead(rate = 1, volume = 1) {
+    window.speechSynthesis.cancel();
+
+    const selectedText = window.getSelection()?.toString().trim();
+
+    if (!selectedText) {
+      alert(
+        "Nenhum texto selecionado.\nSelecione um trecho da página antes de acionar a leitura.",
+      );
+      return;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(selectedText);
+    utterance.lang = document.documentElement.lang || "pt-BR";
+    utterance.rate = rate;
+    utterance.volume = volume;
+
+    window.speechSynthesis.speak(utterance);
+  }
+
+  // Atalho Alt + L — aciona a leitura diretamente na página
+  document.addEventListener("keydown", (e) => {
+    if (e.altKey && e.key === "l") {
+      e.preventDefault();
+      executeSpeechRead();
     }
   });
 }
