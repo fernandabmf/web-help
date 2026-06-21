@@ -10,7 +10,7 @@ A Extensão oferece ao usuário as seguintes funcionalidades:
 - Alterar textos (redução e aumento)
 - Leitura de textos
 
-## Como instalar
+## Como instalar:
 
 1. Acesse chrome://extensions
 2. Ative "Modo desenvolvedor"
